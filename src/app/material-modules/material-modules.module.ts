@@ -31,6 +31,8 @@ import { MatRadioModule } from "@angular/material/radio";
 
 import { MatListModule } from "@angular/material/list";
 
+// import { MatStepperModule } from "@angular/material/stepper";
+
 
 const MATERIAL_COMPONENTS = [
   MatSidenavModule,
@@ -59,7 +61,9 @@ const MATERIAL_COMPONENTS = [
 
   MatRadioModule,
 
-  MatListModule
+  MatListModule,
+
+  // MatStepperModule
 ];
 
 

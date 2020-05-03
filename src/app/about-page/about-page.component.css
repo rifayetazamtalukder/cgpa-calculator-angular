@@ -1,0 +1,86 @@
+/*  */
+/*  */
+/*  */
+
+
+.header-text {
+    text-align: center;
+    margin-bottom: 0;
+    background-color: #673ab7;
+    padding: 5px 20px;
+    color: white;
+    width: max-content;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.step-container {
+    /* background-color: teal; */
+    margin: 0px 0px;
+    padding: 10px 10px;
+}
+
+.point {
+    /* background-color: teal; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+}
+
+
+.title {
+    font-size: 18px;
+    margin-left: 3px;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #7b1fa2;
+    color: white;
+    
+}
+
+
+.content-container {
+    margin: 0px 18px;
+    border-left: 3px solid #7b1fa2
+}
+
+.content {
+    /* margin-top: 10px; */
+    margin-left: 30px;
+    padding: 20px 0px;
+}
+
+p {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 365px) {
+    /* .router-outlet-container {
+        padding: 10px 0px;
+    } */
+    .title {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+}
+
+
+
+@media screen and (min-width: 1440px) {
+    .step-container {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .step-container {
+        width: 900px;
+        margin: 0 auto;
+    }
+}
