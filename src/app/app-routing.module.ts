@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent
+  },
+  {
+    path: 'calculate-cgpa',
+    component: CgpaCalculatorComponent
   },
   {
     path: 'about',

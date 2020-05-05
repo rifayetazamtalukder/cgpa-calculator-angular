@@ -45,6 +45,7 @@
     flex-direction: column;
 }
 
+
 .router-outlet-container {
     padding: 10px 16px;
 }
@@ -68,6 +69,8 @@
         height: calc(100vh - 56px);
     }
 }
+
+
 
 @media screen and (max-width: 339px) {
     .router-outlet-container {

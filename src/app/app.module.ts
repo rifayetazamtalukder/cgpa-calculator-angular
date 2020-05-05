@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TopbarWithSidenavComponent } from './topbar-with-sidenav/topbar-with-sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AboutPageComponent,
     FooterComponent,
     PageNotFoundComponent,
-    TopbarWithSidenavComponent
+    TopbarWithSidenavComponent,
+    CgpaCalculatorComponent
   ],
   imports: [
     BrowserModule,
