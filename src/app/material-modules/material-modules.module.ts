@@ -33,6 +33,15 @@ import { MatListModule } from "@angular/material/list";
 
 // import { MatStepperModule } from "@angular/material/stepper";
 
+import { MatTabsModule } from "@angular/material/tabs";
+
+import { MatSelectModule } from "@angular/material/select";
+
+import { MatTableModule } from '@angular/material/table';
+
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+
+
 
 const MATERIAL_COMPONENTS = [
   MatSidenavModule,
@@ -63,7 +72,15 @@ const MATERIAL_COMPONENTS = [
 
   MatListModule,
 
-  // MatStepperModule
+  // MatStepperModule,
+
+  MatTabsModule,
+
+  MatSelectModule,
+
+  MatTableModule,
+
+  MatButtonToggleModule
 ];
 
 

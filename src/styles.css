@@ -12,3 +12,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .link {
     color: #3f51b5; text-decoration: none;
 }
+
+.spacer {
+    flex: 1 1 auto;
+}

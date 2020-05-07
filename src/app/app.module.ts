@@ -8,7 +8,7 @@ import { MaterialModulesModule } from "./material-modules/material-modules.modul
 
 import { HttpClientModule } from "@angular/common/http"; // Needed for svgIcon
 
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 
 import { HomePageComponent } from './home-page/home-page.component';
@@ -42,7 +42,9 @@ import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.compo
 
     HttpClientModule,
 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    FormsModule // For ngModel Directives
   ],
   providers: [],
   bootstrap: [AppComponent]

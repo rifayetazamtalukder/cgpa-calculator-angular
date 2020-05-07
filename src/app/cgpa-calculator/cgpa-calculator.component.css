@@ -27,6 +27,168 @@
 }
 
 
+.cgpa-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.tab-header {
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+    /* background-color: rgb(171, 226, 226); */
+}
+
+
+
+.gpa-form-fields {
+    /* background-color: teal; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.col {
+    /* flex-grow: 1; */
+    width: 46%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* .col:not(:first-child){
+    background-color: rgb(192, 245, 245);
+} */
+
+.list, .form-field {
+    font-size: 16px;
+}
+
+.list {
+    width: 100%; /* 100% of the parent width */
+}
+
+
+
+
+
+
+.button-fileds {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 30px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-col1 {
+    /* width: 48%; */
+    padding-right: 2%;
+    /* background-color: teal; */
+}
+
+.button-col2 {
+    /* width: 48%; */
+    padding-left: 2%;
+    /* background-color: #673ab7; */
+}
+
+
+.result-panel {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    /* background-color: teal; */
+}
+
+.gpa {
+    background-color: #673ab7;
+    color: white;
+    margin-right: 2%;
+    width: 48%;
+    /* padding-top: 13px;
+    padding-bottom: 5px;
+    */
+} 
+.cgpa {
+    background-color: #3f51b5;
+    color: white;
+    margin-left: 2%;
+    width: 48%;
+    /* padding-top: 15px;
+    padding-bottom: 5px; */
+}
+
+.result {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 12px;
+}
+
+.mt-20 {
+    margin-top: 20px;;
+}
+
+
+
+
+.data-table-header {
+    margin-bottom: -30px;
+    padding: 5px 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+    background-color: #673ab7;
+    color: white;
+}
+
+
+/* Grading Table */
+.grading-details {
+    margin-top: 30px;
+    height: 415px;
+    overflow: auto;
+
+}
+
+table {
+    width: 100%;
+}
+
+.table-header {
+    background-color: #673ab7;
+}
+
+.table-header th{
+    color: white;
+}
+
+.table-footer {
+    background-color: #673ab7;
+}
+.table-footer td{
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
     ```````````````````````````````````````
@@ -56,22 +218,30 @@
 
 @media screen and (max-width: 200px) {
     /* Don't Apply Any Design */
-    .form-field-container {
-        background-color: darkmagenta;
-    }
-    h2::after {
-        content: "Don't Apply any";
-    }
     
 }
 
 @media screen and (min-width: 200px) and (max-width: 320px) {
     /* Mobile S */
-    .form-field-container {
-        background-color: green;
+    .cgpa-container {
+        width: 97%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile S : 320px to 0";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .gpa-form-fields {
+        flex-direction: column;   
+    }
+
+    .col {
+        /* flex-grow: 1; */
+        width: 96%;
     }
     
 }
@@ -79,67 +249,116 @@
 @media screen and (min-width: 321px) and (max-width: 375px) {
     /* Mobile M */
 
-    .form-field-container {
-        background-color: gold;
+    .cgpa-container {
+        width: 97%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile M : 375px to 321px";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
+    .gpa-form-fields {
+        flex-direction: column;   
+    }
+
+    .col {
+        /* flex-grow: 1; */
+        width: 96%;
+    }
+
+
 }
+
 @media screen and (min-width: 376px) and (max-width: 425px) {
     /* Mobile L */
-    
-    .form-field-container {
-        background-color: tomato;
+    .cgpa-container {
+        width: 97%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile L : 425px to 376px";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
+    .gpa-form-fields {
+        flex-direction: column;   
+    }
+
+    .col {
+        /* flex-grow: 1; */
+        width: 96%;
+    }
 
 }
+
 @media screen and (min-width: 426px) and (max-width: 768px) {
     /* Tablet */
-
-    .form-field-container {
-        background-color: violet;
+    .cgpa-container {
+        width: 85%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile S : 768px to 426px";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
 }
+
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     /* Laptop */
-
-    .form-field-container {
-        background-color: rgb(214, 23, 23);
+    .cgpa-container {
+        width: 65%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile S : 1024px to 769px";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
 }
+
 @media screen and (min-width: 1025px) and (max-width: 1440px) {
     /* Laptop L*/
-
-    .form-field-container {
-        background-color: rgb(51, 51, 177);
+    .cgpa-container {
+        width: 70%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile S : 1440px to 1025px";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
 }
+
 @media screen  and (min-width: 1441px) {
     /* 4K Devices */
 
-    .form-field-container {
-        background-color: blueviolet;
+    .cgpa-container {
+        width: 58%;
+        margin: 0 auto;
     }
-    h2::after {
-        content: "Mobile S : 2560px to 1441px";
+    
+    .tab-header {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
 }
