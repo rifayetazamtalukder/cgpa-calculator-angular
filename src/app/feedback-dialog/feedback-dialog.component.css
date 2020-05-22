@@ -1,0 +1,48 @@
+/*  */
+/*  */
+/*  */
+
+mat-dialog-content {
+    width: 100%;
+    /* background-color: rgb(187, 243, 243); */
+}
+
+.form-fields {
+    width: 90%;
+    margin: 0 auto;
+    /* background-color: rgb(238, 224, 222); */
+}
+
+.feedback-form-fields {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.col {
+    /* flex-grow: 1; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.col:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+mat-form-field {
+    font-size: 16px;
+    width: 100%;
+    /* margin: 0 auto; */
+}
+
+.textarea-height {
+    height: 50px;
+}
+
+.my-20 {
+    margin: 20px 0;
+    /* margin-bottom: 20px; */
+}
+
+
+

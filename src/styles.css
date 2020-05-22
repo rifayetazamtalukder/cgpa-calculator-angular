@@ -1,4 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+    --indigo-pink-primary: #3f51b5;
+    --indigo-pink-accent: #ff4081;
+    --indigo-pink-warn: #f44336;
+
+    --deeppurle-amber-primary: #673ab7;
+    --deeppurle-amber-accent: #ffd740;
+    --deeppurle-amber-warn: #f44336;
+
+    --pink-bluegrey-primary: #c2185b;
+    --pink-bluegrey-accent: #b0bec5;
+    --pink-bluegrey-warn: #f44336;
+
+    --purple-green-primary: #7b1fa2;
+    --purple-green-warn: #69f0ae;
+    --purple-green-warn: #f44336;
+*/
+
+
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

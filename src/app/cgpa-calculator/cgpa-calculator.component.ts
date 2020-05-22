@@ -40,7 +40,7 @@ export class CgpaCalculatorComponent implements OnInit, OnDestroy {
 
   cgpaCalculatorErrorStateMatcher = new CGPACalculatorErrorStateMatcher();
   public private_university_selected: string = 'ewu'; // Default select for the private university
-  public private_university_selected_full_name: string = 'East West University - EWU';
+  public private_university_selected_full_name: string = 'East West University';
   public selected_university_grade;
   public gpa: number;
   public cgpa: number;
@@ -531,9 +531,84 @@ export class CgpaCalculatorComponent implements OnInit, OnDestroy {
       this.private_university_selected_full_name = 'Brac University';
     }
 
-    // TODO: Use MAt Snackbar Here for University Selection
+    else if (this.private_university_selected === 'aiub') {
+      this.selected_university_grade = this.private_university_grading_policy.aiub;
+      this.dataSource = this.private_university_grading_policy.aiub;
+      this.private_university_selected_full_name = 'American International University Bangladesh';
+    }
 
-    this.snackBar.open(`Showing Data for ${this.private_university_selected_full_name}`, "Dismiss", {
+    else if (this.private_university_selected === 'aust') {
+      this.selected_university_grade = this.private_university_grading_policy.aust;
+      this.dataSource = this.private_university_grading_policy.aust;
+      this.private_university_selected_full_name = 'Ahsanullah University of Science & Technology';
+    }
+
+    else if (this.private_university_selected === 'uiu') {
+      this.selected_university_grade = this.private_university_grading_policy.uiu;
+      this.dataSource = this.private_university_grading_policy.uiu;
+      this.private_university_selected_full_name = 'United International University';
+    }
+    else if (this.private_university_selected === 'diu') {
+      this.selected_university_grade = this.private_university_grading_policy.diu;
+      this.dataSource = this.private_university_grading_policy.diu;
+      this.private_university_selected_full_name = 'Daffodil International University';
+    }
+
+    else if (this.private_university_selected === 'iub') {
+      this.selected_university_grade = this.private_university_grading_policy.iub;
+      this.dataSource = this.private_university_grading_policy.iub;
+      this.private_university_selected_full_name = 'Independent University, Bangladesh';
+    }
+    else if (this.private_university_selected === 'uap') {
+      this.selected_university_grade = this.private_university_grading_policy.uap;
+      this.dataSource = this.private_university_grading_policy.uap;
+      this.private_university_selected_full_name = 'University of Asia Pacific';
+    }
+    else if (this.private_university_selected === 'ulab') {
+      this.selected_university_grade = this.private_university_grading_policy.ulab;
+      this.dataSource = this.private_university_grading_policy.ulab;
+      this.private_university_selected_full_name = 'University of Liberal Arts Bangladesh';
+    }
+
+    else if (this.private_university_selected === 'iubat') {
+      this.selected_university_grade = this.private_university_grading_policy.iubat;
+      this.dataSource = this.private_university_grading_policy.iubat;
+      this.private_university_selected_full_name = 'International University of Business Agriculture and Technology University';
+    }
+    else if (this.private_university_selected === 'su') {
+      this.selected_university_grade = this.private_university_grading_policy.su;
+      this.dataSource = this.private_university_grading_policy.su;
+      this.private_university_selected_full_name = 'Southeast University';
+    }
+    else if (this.private_university_selected === 'sub') {
+      this.selected_university_grade = this.private_university_grading_policy.sub;
+      this.dataSource = this.private_university_grading_policy.sub;
+      this.private_university_selected_full_name = 'Stamford University Bangladesh';
+    }
+    else if (this.private_university_selected === 'bubt') {
+      this.selected_university_grade = this.private_university_grading_policy.bubt;
+      this.dataSource = this.private_university_grading_policy.bubt;
+      this.private_university_selected_full_name = 'Bangladesh University of Business and Technology';
+    }
+    else if (this.private_university_selected === 'aub') {
+      this.selected_university_grade = this.private_university_grading_policy.aub;
+      this.dataSource = this.private_university_grading_policy.aub;
+      this.private_university_selected_full_name = 'Asian University of Bangladesh';
+    }
+    else if (this.private_university_selected === 'eu') {
+      this.selected_university_grade = this.private_university_grading_policy.eu;
+      this.dataSource = this.private_university_grading_policy.eu;
+      this.private_university_selected_full_name = 'Eastern University';
+    }
+    else if (this.private_university_selected === 'miu') {
+      this.selected_university_grade = this.private_university_grading_policy.miu;
+      this.dataSource = this.private_university_grading_policy.miu;
+      this.private_university_selected_full_name = 'Manarat International University';
+    }
+
+    // TODO: Use Mat Snackbar Here for University Selection
+
+    this.snackBar.open(`Showing Data for "${this.private_university_selected_full_name}"`, "Dismiss", {
       duration: 2500,
       horizontalPosition: 'center',
       verticalPosition: 'bottom'
@@ -571,6 +646,7 @@ export class CgpaCalculatorComponent implements OnInit, OnDestroy {
       { letter_grade: 'D', grade_point: 1.00, mark: '60 - 66' },
       { letter_grade: 'F', grade_point: 0.00, mark: 'below 60' },
     ],
+
     brac: [
       { letter_grade: 'A', grade_point: 4.00, mark: '90 - 100' },
       { letter_grade: 'A-', grade_point: 3.70, mark: '85 - below 90' },
@@ -585,6 +661,155 @@ export class CgpaCalculatorComponent implements OnInit, OnDestroy {
       { letter_grade: 'D-', grade_point: 0.70, mark: '50 - below 52' },
       { letter_grade: 'F', grade_point: 0.00, mark: 'below 50' },
     ],
+
+    aiub: [
+      { letter_grade: 'A+', grade_point: 4.00, mark: '90 - 100' },
+      { letter_grade: 'A', grade_point: 3.75, mark: '85 - below 90' },
+      { letter_grade: 'B+', grade_point: 3.50, mark: '80 - below 85' },
+      { letter_grade: 'B', grade_point: 3.25, mark: '75 - below 80' },
+      { letter_grade: 'C+', grade_point: 3.00, mark: '70 - below 75' },
+      { letter_grade: 'C', grade_point: 2.75, mark: '65 - below 70' },
+      { letter_grade: 'D+', grade_point: 2.50, mark: '60 - below 65' },
+      { letter_grade: 'D', grade_point: 2.25, mark: '50 - below 60' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'below 50' },
+    ],
+
+    aust: [
+      { letter_grade: 'A+', grade_point: 4.00, mark: '80 and above' },
+      { letter_grade: 'A', grade_point: 3.75, mark: '75 - below 80' },
+      { letter_grade: 'A-', grade_point: 3.50, mark: '70 - below 75' },
+      { letter_grade: 'B+', grade_point: 3.25, mark: '65 - below 70' },
+      { letter_grade: 'B', grade_point: 3.00, mark: '60 - below 65' },
+      { letter_grade: 'B-', grade_point: 2.75, mark: '55 - below 60' },
+      { letter_grade: 'C+', grade_point: 2.50, mark: '50 - below 55' },
+      { letter_grade: 'C', grade_point: 2.25, mark: '45 - below 50' },
+      { letter_grade: 'D', grade_point: 2.00, mark: '40 - below 45' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'below 40' },
+    ],
+
+    uiu: [
+      { letter_grade: 'A', grade_point: 4.00, mark: '90 and above' },
+      { letter_grade: 'A-', grade_point: 3.67, mark: '86 - below 90' },
+      { letter_grade: 'B+', grade_point: 3.33, mark: '82 - below 86' },
+      { letter_grade: 'B', grade_point: 3.00, mark: '78 - below 82' },
+      { letter_grade: 'B-', grade_point: 2.67, mark: '74 - below 78' },
+      { letter_grade: 'C+', grade_point: 2.33, mark: '70 - below 74' },
+      { letter_grade: 'C', grade_point: 2.00, mark: '66 - below 70' },
+      { letter_grade: 'C-', grade_point: 1.67, mark: '62 - below 66' },
+      { letter_grade: 'D+', grade_point: 1.33, mark: '58 - below 62' },
+      { letter_grade: 'D', grade_point: 1.00, mark: '55 - below 58' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'below 55' },
+    ],
+
+    diu: [
+      { letter_grade: 'A+', grade_point: 4.00, mark: '80 and above' },
+      { letter_grade: 'A', grade_point: 3.75, mark: '75 - below 80' },
+      { letter_grade: 'A-', grade_point: 3.50, mark: '70 - below 75' },
+      { letter_grade: 'B+', grade_point: 3.25, mark: '65 - below 70' },
+      { letter_grade: 'B', grade_point: 3.00, mark: '60 - below 65' },
+      { letter_grade: 'B-', grade_point: 2.75, mark: '55 - below 60' },
+      { letter_grade: 'C+', grade_point: 2.50, mark: '50 - below 55' },
+      { letter_grade: 'C', grade_point: 2.25, mark: '45 - below 50' },
+      { letter_grade: 'D', grade_point: 2.00, mark: '40 - below 45' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'below 40' },
+    ],
+
+    iub: [
+      { letter_grade: 'A', grade_point: 4.00, mark: 'Marks N. A.' },
+      { letter_grade: 'A-', grade_point: 3.70, mark: 'M. Not A.' },
+      { letter_grade: 'B+', grade_point: 3.30, mark: 'M. N. Available' },
+      { letter_grade: 'B', grade_point: 3.00, mark: 'Marks N. A.' },
+      { letter_grade: 'B-', grade_point: 2.70, mark: 'M. Not A.' },
+      { letter_grade: 'C+', grade_point: 2.30, mark: 'M. N. Available' },
+      { letter_grade: 'C', grade_point: 2.00, mark: 'Marks N. A.' },
+      { letter_grade: 'C-', grade_point: 1.70, mark: 'M. Not A.' },
+      { letter_grade: 'D+', grade_point: 1.30, mark: 'M. N. Available' },
+      { letter_grade: 'D', grade_point: 1.00, mark: 'Marks N. A.' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'M. Not A.' },
+    ],
+
+    uap: [
+      { letter_grade: 'A+', grade_point: 4.00, mark: '80 and above' },
+      { letter_grade: 'A', grade_point: 3.75, mark: '75 - below 80' },
+      { letter_grade: 'A-', grade_point: 3.50, mark: '70 - below 75' },
+      { letter_grade: 'B+', grade_point: 3.25, mark: '65 - below 70' },
+      { letter_grade: 'B', grade_point: 3.00, mark: '60 - below 65' },
+      { letter_grade: 'B-', grade_point: 2.75, mark: '55 - below 60' },
+      { letter_grade: 'C+', grade_point: 2.50, mark: '50 - below 55' },
+      { letter_grade: 'C', grade_point: 2.25, mark: '45 - below 50' },
+      { letter_grade: 'D', grade_point: 2.00, mark: '40 - below 45' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'below 40' },
+    ],
+
+    ulab: [
+      { letter_grade: 'A+', grade_point: 4.00, mark: 'Marks N. A.' },
+      { letter_grade: 'A', grade_point: 4.00, mark: 'M. Not A.' },
+      { letter_grade: 'A-', grade_point: 3.80, mark: 'M. N. Available' },
+      { letter_grade: 'B+', grade_point: 3.30, mark: 'M. N. A' },
+      { letter_grade: 'B', grade_point: 3.00, mark: 'M. N. A.' },
+      { letter_grade: 'B-', grade_point: 2.80, mark: 'M. N. A.' },
+      { letter_grade: 'C+', grade_point: 2.50, mark: 'M. N. A.' },
+      { letter_grade: 'C', grade_point: 2.22, mark: 'M. N. A.' },
+      { letter_grade: 'D', grade_point: 1.5, mark: 'M. N. A.' },
+      { letter_grade: 'F', grade_point: 0.00, mark: 'M. N. A.' },
+    ],
+
+    iubat: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
+    su: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
+    sub: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
+    bubt: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
+    aub: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
+    eu: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
+    miu: [
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+      { letter_grade: 'Update', grade_point: 4.00, mark: 'Update' },
+    ],
+
   };
 
 

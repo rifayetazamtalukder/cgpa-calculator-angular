@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cgpa-calculator-angular": {
+      "hosting": {
+        "cgpa-calculator-angular": [
+          "cgpa-calculator-angular"
+        ]
+      }
+    }
+  }
+}

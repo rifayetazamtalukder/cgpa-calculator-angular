@@ -41,6 +41,8 @@ import { MatTableModule } from '@angular/material/table';
 
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 const MATERIAL_COMPONENTS = [
@@ -80,7 +82,9 @@ const MATERIAL_COMPONENTS = [
 
   MatTableModule,
 
-  MatButtonToggleModule
+  MatButtonToggleModule,
+
+  MatDialogModule
 ];
 
 

@@ -6,7 +6,8 @@
 <!-- Toolbar with Sidenav -->
 <mat-sidenav-container class="sidenav-container">
     <!--  -->
-    <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [mode]="navMode" [opened]="isSideNavOpen">
+    <mat-sidenav #drawer class="sidenav mat-elevation-z4" fixedInViewport="false" [mode]="navMode"
+        [opened]="isSideNavOpen">
         <!--  -->
         <!-- Sidenavigation bar Menu -->
         <mat-toolbar color="primary">
@@ -33,16 +34,16 @@
             <!--  -->
             <!-- Menu Links -->
             <!--  -->
-            <a mat-list-item class="menu-list-item" routerLink="/">Home</a>
+            <a mat-list-item class="side-menu-list-item" routerLink="/">Home</a>
             <mat-divider></mat-divider>
             <!--  -->
-            <a mat-list-item class="menu-list-item" routerLink="/calculate-cgpa">Calculate CGPA</a>
+            <a mat-list-item class="side-menu-list-item" routerLink="/calculate-cgpa">Calculate CGPA</a>
             <mat-divider></mat-divider>
 
-            <a mat-list-item class="menu-list-item" routerLink="/about">About</a>
+            <a mat-list-item class="side-menu-list-item" routerLink="/about">About</a>
             <mat-divider></mat-divider>
 
-            <a mat-list-item class="menu-list-item" routerLink="/help">Help</a>
+            <a mat-list-item class="side-menu-list-item" routerLink="/help">Help</a>
             <!--  -->
             <!-- End of Menu Links -->
             <!--  -->
@@ -79,7 +80,11 @@
 
             <!-- Right Side Menu Button -->
             <!-- This should be at the end of this list -->
-
+            <span>
+                <button (click)="AddFeedback()" mat-icon-button>
+                    <mat-icon svgIcon="feedback-white"></mat-icon>
+                </button>
+            </span>
             <button mat-icon-button [matMenuTriggerFor]="topRightSideMenu"
                 aria-label="Top RIght Side Dotted Menu Button" matTooltip="Opens Menu Option" matTooltipShowDelay="600"
                 matTooltipClass="custom-tooltip">

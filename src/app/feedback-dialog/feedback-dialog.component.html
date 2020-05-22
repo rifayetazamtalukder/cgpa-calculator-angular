@@ -1,0 +1,154 @@
+<!--  -->
+<!--  -->
+<!--  -->
+
+<h2 mat-dialog-title
+    style="background-color: #7b1fa2; color: white; text-align: center; padding: 5px 0; border-radius: 2px;"> Add a
+    Feedback</h2>
+
+<mat-dialog-content>
+
+    <form [formGroup]="feedback_form" ngSubmit="SubmitFeedback()" class="form-fields">
+        <!--  -->
+        <div class="feedback-form-fields my-20">
+            <!--  -->
+            <!-- Username -->
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Your Name</mat-label>
+                    <input matInput required formControlName="username" [errorStateMatcher]="feedback_errorStateMatcher"
+                        placeholder="Your full name" maxlength="{{ feedback_form_min_max.username.maxLength }}"
+                        autocomplete="off">
+                    <mat-hint align="start">Please enter your full name</mat-hint>
+                    <mat-hint align="end">
+                        {{username.value.length}} / {{ feedback_form_min_max.username.maxLength }}
+                    </mat-hint>
+
+                    <!-- Error -->
+                    <mat-error *ngIf="username.hasError('required')">This field is required</mat-error>
+                    <mat-error *ngIf="username.hasError('pattern')">Only alphabet is allowed</mat-error>
+
+                    <mat-error *ngIf="username.hasError('minlength')">
+
+                        <div style="float: left;">
+                            Min Length is {{ feedback_form_min_max.username.minLength }}
+                        </div>
+
+                        <div style="float: right;">
+                            {{username.value.length}} / {{ feedback_form_min_max.username.maxLength }}
+                        </div>
+
+                    </mat-error>
+
+                    <mat-error *ngIf="username.hasError('maxlength')">
+                        Max Length is {{ feedback_form_min_max.username.maxLength }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!--  -->
+            <!-- Email -->
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput required formControlName="email" [errorStateMatcher]="feedback_errorStateMatcher"
+                        placeholder="Ex. username@gmail.com" autocomplete="off">
+                    <mat-hint>Please enter your email</mat-hint>
+
+                    <!-- Error -->
+                    <mat-error *ngIf="email.hasError('required')">This field is required</mat-error>
+                    <mat-error *ngIf="email.hasError('email')">Please enter a valid email</mat-error>
+                </mat-form-field>
+            </div>
+
+            <!--  -->
+            <!-- Title -->
+            <div class="col">
+                <mat-form-field appearance="outline">
+                    <mat-label>Title</mat-label>
+                    <input matInput required formControlName="title" [errorStateMatcher]="feedback_errorStateMatcher"
+                        placeholder="Title" autocomplete="off" maxlength="{{ feedback_form_min_max.title.maxLength }}">
+                    <mat-hint align="start">Please enter a title</mat-hint>
+                    <mat-hint align="end">
+                        {{ title.value.length }} / {{ feedback_form_min_max.title.maxLength }}
+                    </mat-hint>
+
+
+                    <!-- Error -->
+                    <mat-error *ngIf="title.hasError('required')">This field is required</mat-error>
+
+                    <mat-error *ngIf="title.hasError('minlength')">
+                        <div style="float: left;">
+                            Min Length is {{ feedback_form_min_max.title.minLength }}
+                        </div>
+
+                        <div style="float: right;">
+                            {{title.value.length}} / {{ feedback_form_min_max.title.maxLength }}
+                        </div>
+                    </mat-error>
+
+                    <mat-error *ngIf="title.hasError('maxlength')">
+                        Max Length is {{ feedback_form_min_max.title.maxLength }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!--  -->
+            <!-- Description -->
+            <div class="col">
+                <mat-form-field appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea class="textarea-height" matInput required formControlName="description"
+                        [errorStateMatcher]="feedback_errorStateMatcher" placeholder="Description" autocomplete="off"
+                        maxlength="{{ feedback_form_min_max.description.maxLength }}"></textarea>
+                    <mat-hint align="start">Please enter details</mat-hint>
+                    <mat-hint align="end">
+                        {{ description.value.length }} / {{ feedback_form_min_max.description.maxLength }}
+                    </mat-hint>
+
+                    <!-- Error -->
+                    <mat-error *ngIf="description.hasError('required')">This field is required</mat-error>
+
+                    <mat-error *ngIf="description.hasError('minlength')">
+                        <div style="float: left;">
+                            Min Length is {{ feedback_form_min_max.description.minLength }}
+                        </div>
+
+                        <div style="float: right;">
+                            {{description.value.length}} / {{ feedback_form_min_max.description.maxLength }}
+                        </div>
+                    </mat-error>
+
+                    <mat-error *ngIf="description.hasError('maxlength')">
+                        Max Length is {{ feedback_form_min_max.description.maxLength }}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!--  -->
+            <!-- Date of feedback -->
+            <div class="col">
+                <mat-form-field appearance="fill">
+                    <mat-label>Date of Feedback</mat-label>
+                    <input matInput required formControlName="datetime" placeholder="Description" autocomplete="off">
+                    <mat-hint>Current Date</mat-hint>
+
+                    <!-- Error -->
+                    <!-- No Error field requires -->
+                    <!-- It's a disabled field by default. -->
+                    <!-- And User can't enable this field -->
+                </mat-form-field>
+            </div>
+        </div>
+        <!--  -->
+
+        <!-- Submit Button -->
+        <button (click)="SubmitFeedback()" mat-raised-button color="primary">Submit</button>
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <!--  -->
+    <button mat-dialog-close mat-raised-button color="accent">Close</button>
+    <!--  -->
+</mat-dialog-actions>

@@ -4,6 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { environment } from "../environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+import { FeedbackService } from "./services/feedback.service";
+
+
 import { MaterialModulesModule } from "./material-modules/material-modules.module";
 
 import { HttpClientModule } from "@angular/common/http"; // Needed for svgIcon
@@ -19,6 +26,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TopbarWithSidenavComponent } from './topbar-with-sidenav/topbar-with-sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.component';
+import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,11 @@ import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.compo
     FooterComponent,
     PageNotFoundComponent,
     TopbarWithSidenavComponent,
-    CgpaCalculatorComponent
+    CgpaCalculatorComponent,
+    FeedbackDialogComponent
+  ],
+  entryComponents: [
+    FeedbackDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +49,9 @@ import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.compo
     AppRoutingModule,
 
     BrowserAnimationsModule,
+
+    AngularFireModule.initializeApp(environment.firebase, 'cgpa-calculator-angular'),
+    AngularFirestoreModule,
 
     MaterialModulesModule,
 
@@ -46,7 +61,9 @@ import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.compo
 
     FormsModule // For ngModel Directives
   ],
-  providers: [],
+  providers: [
+    FeedbackService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

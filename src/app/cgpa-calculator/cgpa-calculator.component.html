@@ -15,10 +15,10 @@
             <div class="tab-header">
 
                 <mat-form-field class="list" appearance="outline">
-                    <mat-label>Select an University</mat-label>
+                    <mat-label>Select a University</mat-label>
                     <!--  -->
                     <mat-select [(value)]="private_university_selected"
-                        (valueChange)="GetDataSource_forGradingPolicy()">
+                        (selectionChange)="GetDataSource_forGradingPolicy()">
 
                         <mat-option *ngFor="let private_university of private_university_lists"
                             [value]="private_university.value" title="{{ private_university.name }}">
@@ -341,12 +341,14 @@
                 <div class="button-fileds">
 
                     <div class="button-col1">
-                        <button mat-raised-button color="primary" type="submit" (click)="CalculateGPA_CGPA()">Calculate
+                        <button mat-raised-button color="primary" type="submit" (click)="CalculateGPA_CGPA()"
+                            title="Calculates both GPA and CGPA">Calculate
                             GPA/CGPA</button>
                     </div>
                     <!--  -->
                     <div class="button-col2">
-                        <button mat-raised-button color="warn" type="button" (click)="ResetAllFields()">Reset All
+                        <button mat-raised-button color="warn" type="button" (click)="ResetAllFields()"
+                            title="Resets all the input fields value">Reset All
                             Fields</button>
                     </div>
                 </div>
@@ -391,7 +393,7 @@
             <!-- Grading Policy in in Table -->
             <!--  -->
             <div style="margin-top: 40px;">
-                <h1 class="data-table-header">
+                <h1 class="data-table-header" title="Grading Policy for '{{private_university_selected_full_name}}'">
                     Grading Policy For: {{ private_university_selected.toUpperCase() }}
                 </h1>
             </div>
