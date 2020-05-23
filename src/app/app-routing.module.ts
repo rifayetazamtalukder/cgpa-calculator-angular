@@ -5,6 +5,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 
 const routes: Routes = [
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'help',
     component: HelpPageComponent
+  },
+  {
+    path: 'admin',
+    component: AdminPanelComponent
   },
 
   // 

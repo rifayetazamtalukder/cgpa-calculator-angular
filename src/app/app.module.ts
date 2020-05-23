@@ -27,6 +27,7 @@ import { TopbarWithSidenavComponent } from './topbar-with-sidenav/topbar-with-si
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CgpaCalculatorComponent } from './cgpa-calculator/cgpa-calculator.component';
 import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FeedbackDialogComponent } from './feedback-dialog/feedback-dialog.compo
     PageNotFoundComponent,
     TopbarWithSidenavComponent,
     CgpaCalculatorComponent,
-    FeedbackDialogComponent
+    FeedbackDialogComponent,
+    AdminPanelComponent
   ],
   entryComponents: [
     FeedbackDialogComponent

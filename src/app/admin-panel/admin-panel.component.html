@@ -1,0 +1,79 @@
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+<div class="login-container mat-elevation-z4" *ngIf="!login_success">
+
+    <h2 class="header">Please Login</h2>
+
+    <h4 *ngIf="wrong_username_or_password" class="error-text">{{ error_text }}</h4>
+
+    <form [formGroup]="admin_form" class="loginForm" ngSubmit="Login()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" [errorStateMatcher]="adminErrorStateMatcher" autocomplete="off"
+                required placeholder="Your username">
+
+            <mat-hint>Username for admin</mat-hint>
+
+            <mat-error *ngIf="username.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <!--  -->
+
+        <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [errorStateMatcher]="adminErrorStateMatcher" autocomplete="off"
+                [type]="hide_password ? 'password' : 'text'">
+
+            <button mat-icon-button matSuffix (click)="hide_password = !hide_password"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide_password">
+                <mat-icon>{{hide_password ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+
+
+            <mat-hint>Enter Your Alphaneumeric Password</mat-hint>
+
+            <mat-error *ngIf="password.hasError('required')">This field is required</mat-error>
+            <mat-error *ngIf="password.hasError('pattern')">Only number and text is allowed</mat-error>
+        </mat-form-field>
+
+
+        <div class="button-right">
+            <button mat-raised-button (click)="Login()" [disabled]="disable_login" color="primary">Login</button>
+        </div>
+
+    </form>
+
+</div>
+<!--  -->
+
+
+
+<!-- <div class="adminPanel mat-elevation-z4"> -->
+<div class="adminPanel mat-elevation-z4" *ngIf="login_success">
+
+    <h2 class="header">
+        Admin Panel
+    </h2>
+    <h3 class="header2">
+        All feedbacks
+    </h3>
+
+    <div class="card-all">
+
+        <div class="feedbacks mat-elevation-z4" *ngFor="let feedback of feedbacks">
+            <b>Title: {{ feedback.title }}</b> <br>
+            Id: {{ feedback.id }} <br>
+            Username: {{ feedback.username }} <br>
+            Email: {{ feedback.email }} <br>
+            Date: {{ feedback.datetime }} <br>
+            Description: {{ feedback.description }} <br>
+        </div>
+    </div>
+
+
+
+</div>

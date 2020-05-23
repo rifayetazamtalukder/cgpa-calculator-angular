@@ -92,6 +92,7 @@ export class FeedbackDialogComponent implements OnInit {
     return this.feedback_form.get('datetime');
   }
 
+  // Constructor
   constructor(
     private feedbackService: FeedbackService,
     public snackBar: MatSnackBar,
