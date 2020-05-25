@@ -43,6 +43,7 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
   public error_text: string;
   public disable_login: boolean;
   private _feedback_sub: Subscription;
+  public date_from_fire: any = [];
 
   public feedbacks: Feedback[];
 
@@ -122,7 +123,16 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
         this.login_success = true;
 
         // Fetch data from firestore to see all the feedbacks
-        console.log(this.feedbacks)
+        // console.log(this.feedbacks)
+        // let __fe = this.feedbacks;
+        // console.log(__fe);
+        // for (let i = 0; i < __fe.length; i++) {
+        //   console.log(`
+        //   Title: ${__fe[i].title}
+        //   Date from firebase: ${__fe[i].datetime}
+        //   Date Using new Date: ${(new Date(__fe[i].datetime)).toDateString()}
+        //   `);
+        // }
       }
       else {
         // username or password are wrong

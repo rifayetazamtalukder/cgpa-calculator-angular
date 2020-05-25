@@ -52,25 +52,26 @@
 
 
 
-<!-- <div class="adminPanel mat-elevation-z4"> -->
-<div class="adminPanel mat-elevation-z4" *ngIf="login_success">
+<div class="adminPanel mat-elevation-z4">
+    <!-- <div class="adminPanel mat-elevation-z4" *ngIf="login_success"> -->
 
     <h2 class="header">
         Admin Panel
     </h2>
     <h3 class="header2">
-        All feedbacks
+        All feedbacks (<b>{{ feedbacks?.length }}</b> feedbacks)
     </h3>
 
     <div class="card-all">
 
-        <div class="feedbacks mat-elevation-z4" *ngFor="let feedback of feedbacks">
-            <b>Title: {{ feedback.title }}</b> <br>
+        <div class="feedbacks mat-elevation-z4" *ngFor="let feedback of feedbacks; index as i">
+            <b>{{ i+1 }}. Title: {{ feedback.title }}</b> <br>
             Id: {{ feedback.id }} <br>
             Username: {{ feedback.username }} <br>
             Email: {{ feedback.email }} <br>
-            Date: {{ feedback.datetime }} <br>
+            Date: {{ feedback.datetime?.toDate() }} <br>
             Description: {{ feedback.description }} <br>
+
         </div>
     </div>
 
