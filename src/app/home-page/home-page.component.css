@@ -20,6 +20,13 @@
     color: #3f51b5;
 }
 
+.highlight {
+    padding: 0 8px;
+    border-radius: 5px;
+    background-color: #c2185b;
+    color: white;
+}
+
 .youtube-video-container {
     width: 60%;
     height: 400px;

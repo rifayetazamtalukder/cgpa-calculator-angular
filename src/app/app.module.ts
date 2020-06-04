@@ -17,6 +17,8 @@ import { HttpClientModule } from "@angular/common/http"; // Needed for svgIcon
 
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
@@ -51,6 +53,8 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
     AppRoutingModule,
 
     BrowserAnimationsModule,
+
+    FlexLayoutModule,
 
     AngularFireModule.initializeApp(environment.firebase, 'cgpa-calculator-angular'),
     AngularFirestoreModule,
