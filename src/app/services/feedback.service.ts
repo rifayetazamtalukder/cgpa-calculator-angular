@@ -7,7 +7,7 @@ import 'firebase/firestore';
 import { Feedback } from "../interfaces/feedback";
 import { Observable } from "rxjs";
 
-import { map } from "rxjs/operators";
+import { map, filter } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class FeedbackService {
   constructor(public afs: AngularFirestore) {
     // this.feedbacks = this.afs.collection('feedback').valueChanges();
 
-    this.feedbackCollection = this.afs.collection('feedback', ref => ref.orderBy('title', 'asc'));
+    this.feedbackCollection = this.afs.collection('feedback', ref => ref.orderBy('datetime', 'desc'));
 
     // To get the id use snapshotChanges
     this.feedbacks = this.feedbackCollection.snapshotChanges().pipe(
@@ -46,8 +46,35 @@ export class FeedbackService {
       email: data.email,
       title: data.title,
       description: data.description,
-      datetime: data.datetime
+      datetime: data.datetime,
+      read: data.read
     });
+  }
+
+  markAsRead(feedback: Feedback) {
+    // this.feedbackCollection.update({
+    //   "read": true;
+    // })
+    this.afs.collection('feedback')
+      .doc(feedback.id)
+      .update({
+        read: true
+      });
+
+  }
+
+  markAsUnread(feedback: Feedback) {
+    this.afs.collection('feedback')
+      .doc(feedback.id)
+      .update({
+        read: false
+      });
+  }
+
+  delete_A_Feedback(feedback: Feedback) {
+    this.afs.collection('feedback')
+      .doc(feedback.id)
+      .delete();
   }
 
 }

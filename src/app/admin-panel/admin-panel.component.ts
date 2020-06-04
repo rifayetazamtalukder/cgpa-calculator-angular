@@ -46,6 +46,8 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
   public date_from_fire: any = [];
 
   public feedbacks: Feedback[];
+  public unreadFeedbacks: Feedback[];
+  public readFeedbacks: Feedback[];
 
   public admin_form = this.formBuilder.group({
 
@@ -123,6 +125,8 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
         this.login_success = true;
 
         // Fetch data from firestore to see all the feedbacks
+        // Fetched in ngOnInit()
+
         // console.log(this.feedbacks)
         // let __fe = this.feedbacks;
         // console.log(__fe);
@@ -183,5 +187,20 @@ export class AdminPanelComponent implements OnInit, OnDestroy {
       verticalPosition: verticalPosition
     });
   }
+
+
+  MarkFeedbackAsRead(feedback: Feedback) {
+    this.feedbackService.markAsRead(feedback);
+  }
+
+  MarkFeedbackAsUnRead(feedback: Feedback) {
+    this.feedbackService.markAsUnread(feedback)
+  }
+
+  DeleteFeedback(feedback: Feedback) {
+    this.feedbackService.delete_A_Feedback(feedback);
+  }
+
+
 
 }

@@ -73,7 +73,8 @@ export class FeedbackDialogComponent implements OnInit {
     datetime: [{
       value: new Date(),
       disabled: true
-    }]
+    }],
+    read: [false]
   });
 
   get username() {
@@ -90,6 +91,9 @@ export class FeedbackDialogComponent implements OnInit {
   }
   get datetime() {
     return this.feedback_form.get('datetime');
+  }
+  get read() {
+    return this.feedback_form.get('read');
   }
 
   // Constructor
@@ -121,7 +125,8 @@ export class FeedbackDialogComponent implements OnInit {
         email: this.email.value,
         title: this.title.value,
         description: this.description.value,
-        datetime: this.datetime.value
+        datetime: this.datetime.value,
+        read: this.read.value
       };
       // console.log(this._feedback);
 

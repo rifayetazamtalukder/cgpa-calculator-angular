@@ -7,5 +7,6 @@ export interface Feedback {
     email?: string,
     title?: string,
     description?: string,
-    datetime?: Timestamp
+    datetime?: Timestamp,
+    read?: boolean
 }
