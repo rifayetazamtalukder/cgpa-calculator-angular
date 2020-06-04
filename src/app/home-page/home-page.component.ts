@@ -10,8 +10,9 @@ import { DomSanitizer } from "@angular/platform-browser";
 })
 export class HomePageComponent implements OnInit {
 
-  private videoUrl = 'https://youtube.com/embed/TfzV1GIDlFE'; // WPF - C# : CGPA-GPA Calculator Demo Video
-  public safeVideoUrl;
+  private videoUrl = 'https://youtube.com/embed/ZJYQEnyzNT8'; // WPF - C# : CGPA-GPA Calculator Demo Video
+
+  public safeVideoUrl: any;
 
   constructor(private sanitizer: DomSanitizer) {
     this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.videoUrl);

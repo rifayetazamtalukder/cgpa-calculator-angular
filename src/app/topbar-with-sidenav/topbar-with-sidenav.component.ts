@@ -94,6 +94,7 @@ export class TopbarWithSidenavComponent implements OnInit, OnDestroy {
   }
 
 
+
   ngOnDestroy() {
     this.mediaType.unsubscribe();
     this.feedback_dialog_subscriber.unsubscribe();

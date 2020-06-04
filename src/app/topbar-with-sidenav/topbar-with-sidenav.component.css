@@ -39,6 +39,11 @@
     
 }
 
+.active {
+    background-color: #e84860;
+    color: white;
+}
+
 
 /* height: calc(100vh - toolbarHeight) */
 .outlet-content-wrapper {
