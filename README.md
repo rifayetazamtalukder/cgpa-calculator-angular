@@ -1,3 +1,3 @@
 # CgpaCalculatorAngular
 
-You can see the project live in [https://rifayetazamtalukder.github.io/cgpa-calculator-publish/](https://rifayetazamtalukder.github.io/cgpa-calculator-publish/) this site
+You can see the project live in [https://cgpa-calculator-angular.firebaseapp.com/calculate-cgpa](https://cgpa-calculator-angular.firebaseapp.com/calculate-cgpa) this site
